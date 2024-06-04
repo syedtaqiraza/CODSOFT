@@ -1,0 +1,55 @@
+import os
+import json
+def load_task():
+    if not os.path.exists("tasks.json"):
+        return []
+        with open("tasks.json","r") as f:
+            return json.load(f)
+            def save_tasks(tasks):
+                with open("task.json","w")as f:
+                    json.dump(tasks, f, indent=4)
+                    def display_tasks(tasks):
+                        if not tasks:
+                            print("No task found.")
+                            else:
+                                print("Your T0-Do List:")
+                                for i, task in enumerate(task, 1):
+                                    print(f"{i}.{task['title]}- {'Done' if task['Done'] else 'Pending'} ")
+                                    def add_task(tasks):
+                                        title input("Enter task title:")
+                                        tasks.append({"title": title, "done": False})
+                                        save_tasks(tasks)
+                                        print("Task added successfully.")
+                                        def update_task(tasks):
+                                            display_tasks(tasks)
+                                            index = int(input("Enter the number of task to update"))-1
+                                            if 0 <=index <len(tasks):
+                                                tasks[index]["done"] = not tasks[index]["done"]
+                                                save_tasks(tasks)
+                                                print("Task updated successfully.")
+                                                else:
+                                                    print("Invalid task number.")
+                                                    #main function
+                                                    def main():
+                                                        tasks= load_tasks()
+                                                        while True:
+                                                            print("\n1.View Tasks")
+                                                            print("2. Add Tasks")
+                                                            print("3. Update Task Status")
+                                                            print("4. Exit")
+                                                            choice = input("\nEnter your choice: ")
+                                                            id choice=="1":
+                                                            display_tasks(tasks)
+                                                            elif choice=="2":
+                                                                add_task(tasks)
+                                                                elif choice=="3":
+                                                                    update_task(tasks)
+                                                                    elif choice=="4":
+                                                                        print("Exiting...")
+                                                                        break
+                                                                        else:
+                                                                            print("Invalid choice.Please enter a number between 1 and 4.")
+                                                                            if__name__=="__main__":
+                                                                                main()
+                                                                                
+-
